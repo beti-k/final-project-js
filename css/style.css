@@ -5,29 +5,38 @@
     padding: 0 20px;
 }
 
-.body {
+body {
     background-color: white;
     color: black;
 }
 
-.dark-mode{
+.dark-mode {
     background-color: #121212;
     color: white;
 }
 
-/* Ensure inputs, buttons, etc. also switch */
 .dark-mode input,
 .dark-mode button,
 .dark-mode select,
 .dark-mode textarea {
-  background-color: #1e1e1e;
-  color: white;
-  border: 1px solid #555;
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #555;
 }
 
 .dark-mode input::placeholder {
-  color: #ccc;
+    color: #ccc;
 }
+
+body,
+input,
+button,
+header,
+footer,
+.header-li-link {
+    transition: background-color 0.3s, color 0.3s;
+}
+
 
 header {
     display: flex;
@@ -35,7 +44,13 @@ header {
     justify-content: space-between;
     padding: 32px 80px;
     background-color: darkgrey;
-    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+}
+
+
+.dark-mode header {
+    background-color: #1a1a1a;
 }
 
 .main-logo {
@@ -44,62 +59,177 @@ header {
     border-radius: 25px;
 }
 
-.header-nav {
+.header-nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 100px;
 }
+
 
 .header-ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
+    margin-left: 40px;
 }
 
 .header-li-link {
-    font-family: "Savate", sans-serif;
-    font-size: 20px;
-    font-weight: 500;
     text-decoration: none;
-    color: brown;
-    transition: all .3s ease;
+    color: #555;
+    font-size: 20px;
+    font-family: "Savate", sans-serif;
+    font-weight: 400;
+    transition: color 0.3s;
 }
 
-.header-li-link:hover {
-    color: blueviolet;
+.dark-mode .header-li-link {
+    color: #ccc;
 }
 
-input.header-search,
-button.header-btn {
-  border: 1px solid #dedede;
-  font-size: 14px;
-  padding: 8px 12px;
-  margin: 0;
-  outline: none;
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
 }
 
-/* Round only the right side of input */
-input.header-search {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-left: none;
+.header-search {
+    border-radius: 5px;
+    padding: 10px 40px;
+    border: none;
 }
 
-/* Round only the left side of button */
-button.header-btn {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+input:focus {
+    outline: none;
+    box-shadow: none;
 }
 
-/* Optional: Make sure icons don't get cut off */
-.header-btn i {
-  font-size: 16px;
+.header-switch-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
 }
 
-.switch{
-    /* background-color: #737373; */
+.section1 {
+    background-image: url("/images/section-img.jpg");
+    background-position: center;
+    height: 550px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.section1-heading {
+    font-family: "Dancing Script", cursive;
+    font-size: 65px;
+    font-weight: 700;
+    color: aquamarine;
+}
+
+.section1-p {
+    font-family: "Savate", sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    color: darkcyan;
+}
+
+.section1-btn-discover {
+    padding: 5px;
+    border-radius: 25px;
+    transition: all .4s ease;
+    border: none;
+    font-family: "Savate", sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    color: darkcyan;
+}
+
+.section1-btn-discover:hover {
+    background: aquamarine;
+    scale: 1.3;
+}
+
+.section2 {
+    padding: 120px;
+}
+
+.section2-img-container {
+    display: flex;
+    align-items: center;
+    gap: 200px;
+}
+
+.section2-img {
+    width: 450px;
+    height: 450px;
+}
+
+.section2-p {
     font-size: 25px;
-    color: black;
+    line-height: 1.6;
+    max-width: 600px;
+    font-family: "Savate", sans-serif;
 }
+
+footer {
+    padding: 50px;
+    background-color: darkgrey;
+}
+
+.dark-mode footer {
+    background-color: #1a1a1a;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.footer-logo-text {
+    font-family: "Dancing Script", cursive;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+
+.footer-li-links {
+    text-decoration: none;
+    color: darkcyan;
+    font-family: "Savate", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.footer-social{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-socials-li-link{
+    text-decoration: none;
+    color: darkcyan;
+    font-size: 40px;
+}
+
+.footer-last-p{
+    font-size: 25px;
+    max-width: 600px;
+    font-family: "Savate", sans-serif;
+}
+

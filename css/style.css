@@ -214,22 +214,52 @@ footer {
     font-weight: 500;
 }
 
-.footer-social{
+.footer-social {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
 }
 
-.footer-socials-li-link{
+.footer-socials-li-link {
     text-decoration: none;
     color: darkcyan;
     font-size: 40px;
 }
 
-.footer-last-p{
+.footer-last-p {
     font-size: 25px;
     max-width: 600px;
     font-family: "Savate", sans-serif;
 }
+
+#movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.movie-card {
+    width: calc(25% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+}
+
+.movie-card img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.dark-mode .movie-container {
+    color: #1a1a1a;
+}
+
 

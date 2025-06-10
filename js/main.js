@@ -22,7 +22,7 @@ fetch(API_URL)
     .then(response => response.json())
     .then(data => {
         const movieContainer = document.getElementById('movies');
-        data.results.forEach(movie => {
+        data.results.slice(4).forEach(movie => {
             const movieEl = document.createElement('div');
             movieEl.classList.add('movie-card');
 
@@ -32,8 +32,11 @@ fetch(API_URL)
         <p>⭐ ${movie.vote_average}</p>
       `;
             movieContainer.appendChild(movieEl);
+
         });
     })
     .catch(error => console.error('Error fetching movies:', error));
+
+
 
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="icon" href="../images/logo.jpg">
+</head>
+<body class="movie-page">
+    <h2 style="text-align:center;">Movie Details</h2>
+    <div id="movie-details"></div>
+    <button onclick="window.location.href='../index.html'">Main Page</button>
+    <button onclick="window.location.href='../list.html'">Movie List</button>
+    <script>
+        const API_KEY = '37c7b5ee9715374b9d06ee42d5931a13';
+        const IMG_PATH = 'https://image.tmdb.org/t/p/w500';
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = urlParams.get('id');
+        const detailsContainer = document.getElementById('movie-details');
+
+        if (movieId) {
+            fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
+                .then(response => response.json())
+                .then(movie => {
+                    detailsContainer.innerHTML = `
+                        <img src="${IMG_PATH + movie.poster_path}" alt="${movie.title}" style="max-width:300px;">
+                        <h2>${movie.title}</h2>
+                        <p>${movie.overview}</p>
+                        <p>⭐ ${movie.vote_average}</p>
+                    `;
+                })
+                .catch(error => {
+                    detailsContainer.textContent = 'Error loading movie details.';
+                });
+        } else {
+            detailsContainer.textContent = 'No movie selected.';
+        }
+    </script>
+</body>
+</html>
